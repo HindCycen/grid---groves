@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ss4yi7cgkjvg"]
+
+[ext_resource type="Script" uid="uid://j1w26ltifnb6" path="res://gameplay/battle/bot.gd" id="1_k00uv"]
+[ext_resource type="Script" uid="uid://3d6q3gbm1n2g" path="res://gameplay/battle/battle.gd" id="1_mjyx8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjyx8"]
+radius = 1.0
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_mjyx8")
+
+[node name="Bot" type="Area2D" parent="." groups=["bot"]]
+script = ExtResource("1_k00uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bot"]
+shape = SubResource("CircleShape2D_mjyx8")

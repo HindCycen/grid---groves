@@ -11,15 +11,15 @@ signal is_pressed(signal_node: Node)
 signal is_released(signal_node: Node)
 
 func _ready() -> void:
-	position = partial_position * 16
+	position = partial_position * Global.grid_size
 	set_process_input(true)
 	$Area2D.connect("input_event", Callable(self, "_input_event"))
 
 func on_called() -> void:
 	pass
 
-func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print(shape_idx)
+func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	#print(_shape_idx)
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			handle_pressed()
