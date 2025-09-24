@@ -26,8 +26,9 @@ func on_child_pressed(child: Node) -> void:
 func on_child_released(child: Node) -> void:
 	if slices.has(child):
 		is_pressed = false
-		if check_condition_P(): # ConditionP是用于检测所有slice都在grid内的条件
+		if check_condition_P() and check_condition_R(): # ConditionP是用于检测所有slice都在grid内的条件
 			global_position = find_nearest_grid_point(global_position)
+			handle_grid_state()
 			is_placed = true
 		else:
 			global_position = original_position
@@ -37,10 +38,28 @@ func _process(_delta: float) -> void:
 		global_position = get_global_mouse_position()
 
 func check_condition_P() -> bool:
+	if is_placed:
+		return true
 	for slice in slices:
 		if not Global.is_point_in_rect(slice.global_position, Global.grid_left_up, Global.grid_right_down):
 			return false
 	return true
+
+func check_condition_R() -> bool: # Condition R用于检查是否每个格子都可用
+	if is_placed:
+		return true
+	for slice in slices:
+		var nearest_point = find_nearest_grid_point(slice.global_position)
+		var grid_index = Global.get_grid_index(nearest_point)
+		if Global.get_grid_state(grid_index) != Global.GridState.FREE:
+			return false
+	return true
+
+func handle_grid_state() -> void:
+	for slice in slices:
+		var nearest_point = find_nearest_grid_point(slice.global_position)
+		var grid_index = Global.get_grid_index(nearest_point)
+		Global.set_grid_state(grid_index, Global.GridState.OCCUPIED)
 
 func find_nearest_grid_point(target_position: Vector2) -> Vector2:
 	if grid_points.is_empty():

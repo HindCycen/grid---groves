@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+    Global.init_grid()
     _draw()
 
 func _draw() -> void:
