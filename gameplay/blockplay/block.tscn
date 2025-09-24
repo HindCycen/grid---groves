@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chqjqwy44ci58"]
+
+[ext_resource type="Script" uid="uid://b8bqr4d5sbi70" path="res://gameplay/blockplay/block.gd" id="1_rw33v"]
+
+[node name="Block" type="Node2D"]
+script = ExtResource("1_rw33v")
