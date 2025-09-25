@@ -1,8 +1,11 @@
 extends Node
 
-@export var global_speed :=1.0
 
-enum GridState {FREE, UNABLE, OCCUPIED}
+enum GridState {
+    FREE,
+    UNABLE,
+    OCCUPIED
+}
 @export var grid_size := 16
 var half_grid_size := 8
 @export var px_size := 20
