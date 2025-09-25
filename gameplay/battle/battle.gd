@@ -1,8 +1,13 @@
 extends Node2D
 
 func _ready() -> void:
+    #print("::main ready")
     Global.init_grid()
     _draw()
+    for child in get_children():
+        if child is Area2D and child.has_method("initialize_bot"):
+            #print("::main child: ", child)
+            child.initialize_bot()
 
 func _draw() -> void:
     for i in range(8):

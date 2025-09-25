@@ -6,11 +6,19 @@ var current_point_index: int = 0
 var is_moving: bool = false
 var move_delay: float = 1 / Global.global_speed  # 跳转间隔时间（秒）
 
-func _ready() -> void:
-    # 初始化位置为第一个网格点
+#signal initialized
+
+func initialize_bot() -> void:
+    #print("::bot initialize")
     grid_points = get_parent().get_walkable_grid_points()
     if grid_points.size() > 0:
+        #print("::bot initialize: first point: ", grid_points[0])
         global_position = grid_points[0]
+    #initialized.emit()
+
+func _ready() -> void:
+    #print("::bot ready")
+    pass
 
 func _on_button_pressed() -> void:
     # 启动Bot遍历
