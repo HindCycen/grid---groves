@@ -1,8 +1,8 @@
 extends Node2D
 """
-    A slice for a certain block.
-    It is always a child of the block.
-    var partial_position: to show the slice's position in the block
+	A slice for a certain block.
+	It is always a child of the block.
+	var partial_position: to show the slice's position in the block
 """
 
 @export var partial_position: Vector2
@@ -14,9 +14,10 @@ func _ready() -> void:
 	position = partial_position * Global.grid_size
 	set_process_input(true)
 	$Area2D.connect("input_event", Callable(self, "_input_event"))
+	$Area2D.connect("area_entered", Callable(self, "_on_area_entered"))
 
 func on_called() -> void:
-	pass
+	print("ccb")
 
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	#print(_shape_idx)
@@ -31,3 +32,8 @@ func handle_pressed() -> void:
 
 func handle_released() -> void:
 	is_released.emit(self)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bot"):
+		on_called()
+	
