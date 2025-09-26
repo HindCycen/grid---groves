@@ -1,4 +1,4 @@
-extends Node2D
+class_name Block extends Node2D
 """
 	Class for show the whole block.
 	var slices: for each slice of the block.

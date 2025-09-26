@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://gameplay/global.gd"
+DataSave="*res://gameplay/datasave/datasave.gd"
 
 [display]
 

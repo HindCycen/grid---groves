@@ -1,4 +1,4 @@
-extends Node2D
+class_name Slice extends Node2D
 """
 	A slice for a certain block.
 	It is always a child of the block.
