@@ -1,39 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3sv83bhd4rx8"]
+[gd_scene load_steps=4 format=3 uid="uid://b3sv83bhd4rx8"]
 
 [ext_resource type="Script" uid="uid://bdy61u8kdlh4d" path="res://gameplay/main.gd" id="1_6fabs"]
-[ext_resource type="PackedScene" uid="uid://chqjqwy44ci58" path="res://gameplay/blockplay/block.tscn" id="2_6fabs"]
 [ext_resource type="PackedScene" uid="uid://ss4yi7cgkjvg" path="res://gameplay/battle/battle.tscn" id="2_52ahv"]
-[ext_resource type="PackedScene" uid="uid://cn4pdtpvgxddn" path="res://gameplay/blockplay/slice.tscn" id="3_w1pve"]
+[ext_resource type="PackedScene" uid="uid://bq8f8reg6f7q5" path="res://gameplay/blockdata/strike/strike.tscn" id="3_6fabs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6fabs")
 
 [node name="Battle" parent="." instance=ExtResource("2_52ahv")]
 
-[node name="Block" parent="Battle" instance=ExtResource("2_6fabs")]
-position = Vector2(221, 82)
-
-[node name="Slice" parent="Battle/Block" instance=ExtResource("3_w1pve")]
-position = Vector2(43, 18)
-
-[node name="Slice2" parent="Battle/Block" instance=ExtResource("3_w1pve")]
-position = Vector2(43, 12)
-partial_position = Vector2(1, 0)
-
-[node name="Slice3" parent="Battle/Block" instance=ExtResource("3_w1pve")]
-position = Vector2(60, 21)
-partial_position = Vector2(1, 2)
-
-[node name="Block2" parent="Battle" instance=ExtResource("2_6fabs")]
-position = Vector2(212, 34)
-
-[node name="Slice" parent="Battle/Block2" instance=ExtResource("3_w1pve")]
-position = Vector2(43, 18)
-
-[node name="Slice2" parent="Battle/Block2" instance=ExtResource("3_w1pve")]
-position = Vector2(43, 12)
-partial_position = Vector2(1, 0)
-
-[node name="Slice3" parent="Battle/Block2" instance=ExtResource("3_w1pve")]
-position = Vector2(60, 21)
-partial_position = Vector2(1, 2)
+[node name="Strike" parent="Battle" instance=ExtResource("3_6fabs")]

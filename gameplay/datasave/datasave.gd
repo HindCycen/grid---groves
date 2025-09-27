@@ -16,15 +16,15 @@ func init_default_data() -> void:
         "player": {
             "health": 100,
             "max_health": 100,
-            "coins": 0,
-            "level": 1,
-            "experience": 0
+            "coins": 100,
+            "level": 0
         },
         "game_state": {
             "current_seed": 0,
             "seed_progress": 0,
             "unlocked_rows": [false, true, true, true, false],
-            "unlocked_cols": [false, true, true, true, true, true, false]
+            "unlocked_cols": [false, true, true, true, true, true, false],
+            "current_deck": []
         },
         "progress": {
             "completed_levels": [],
