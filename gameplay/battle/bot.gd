@@ -8,8 +8,6 @@ var current_point_index: int = 0
 var is_moving: bool = false
 var move_delay: float = 1.0 / Global.global_speed  # 跳转间隔时间（秒）
 
-#signal initialized
-
 func initialize_bot() -> void:
 	#print("::bot initialize")
 	grid_points = get_parent().get_walkable_grid_points()
