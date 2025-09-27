@@ -1,9 +1,17 @@
 extends Node2D
 
+@onready var battle_music: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 func _ready() -> void:
     #print("::main ready")
     Global.init_grid()
     _draw()
+
+    if battle_music:
+        battle_music.stream.loop = true
+        battle_music.play()
+
     for child in get_children():
         if child is Area2D and child.has_method("initialize_bot"):
             #print("::main child: ", child)
