@@ -6,6 +6,7 @@ class_name Slice extends Node2D
 """
 
 @export var partial_position: Vector2
+@export var slice_type: Global.SliceType = Global.SliceType.NULL
 
 signal is_pressed(signal_node: Node)
 signal is_released(signal_node: Node)

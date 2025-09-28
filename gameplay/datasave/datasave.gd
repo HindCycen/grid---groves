@@ -6,10 +6,9 @@ extends Node
 # 数据存储字典
 var game_data: Dictionary = {}
 
-# 初始化默认数据结构
 func _ready() -> void:
     init_default_data()
-
+    
 # 初始化默认数据结构
 func init_default_data() -> void:
     game_data = {
@@ -21,10 +20,9 @@ func init_default_data() -> void:
         },
         "game_state": {
             "current_seed": 0,
-            "seed_progress": 0,
+            "seed_progress": [0, 0, 0, 0, 0],
             "unlocked_rows": [false, true, true, true, false],
             "unlocked_cols": [false, true, true, true, true, true, false],
-            "current_deck": []
         },
         "progress": {
             "completed_levels": [],

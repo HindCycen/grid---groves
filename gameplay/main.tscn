@@ -10,3 +10,5 @@ script = ExtResource("1_6fabs")
 [node name="Battle" parent="." instance=ExtResource("2_52ahv")]
 
 [node name="Strike" parent="Battle" instance=ExtResource("3_6fabs")]
+
+[node name="Strike2" parent="Battle" instance=ExtResource("3_6fabs")]

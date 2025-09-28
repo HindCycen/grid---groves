@@ -8,6 +8,7 @@ size = Vector2(16, 16)
 
 [node name="StrikeSlice00" type="Node2D"]
 script = ExtResource("1_xr3m1")
+slice_type = 1
 metadata/_custom_type_script = "uid://b0gsk0tg0e0wx"
 
 [node name="Area2D" type="Area2D" parent="."]
