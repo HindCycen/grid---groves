@@ -4,9 +4,9 @@ extends Node
 
 enum GridState {FREE, UNABLE, OCCUPIED}
 enum SliceType {NULL, ATTACK, SKILL, POWER, SHIT}
-@export var grid_size := 16
-var half_grid_size := 8
-@export var px_size := 20
+@export var grid_size := 64
+var half_grid_size := 32
+@export var px_size := 80
 var grid_points: Array[Vector2] = []
 var grid_states: Array[int] = []
 var grid_left_up:= Vector2(2, 4) * px_size
@@ -85,7 +85,9 @@ func init_unlocked_states() -> void:
 		unlocked_cols = saved_cols as Array[bool]
 	else:
 		# 如果没有保存的数据，使用默认值
-		init_unlocked_states()
+		# 初始化默认解锁状态
+		unlocked_rows = [false, true, true, true, false]
+		unlocked_cols = [false, true, true, true, true, true, false]
 
 func is_row_unlocked(row: int) -> bool:
 	if row >= 0 and row < unlocked_rows.size():

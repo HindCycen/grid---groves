@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccqr37d6uytlu"]
 
 [ext_resource type="Script" uid="uid://2p4uirkok758" path="res://gameplay/blockdata/strike/strike_slice_00.gd" id="1_xr3m1"]
-[ext_resource type="Texture2D" uid="uid://b76qlma17yyp2" path="res://icon.svg" id="2_846cq"]
+[ext_resource type="Texture2D" uid="uid://cvgco0p1xktnf" path="res://gameplay/assets/Sword-R.png" id="2_846cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k57r"]
-size = Vector2(16, 16)
+size = Vector2(64, 64)
 
 [node name="StrikeSlice00" type="Node2D"]
 script = ExtResource("1_xr3m1")
@@ -15,7 +15,6 @@ metadata/_custom_type_script = "uid://b0gsk0tg0e0wx"
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(2.682209e-07, 0)
-scale = Vector2(0.12499999, 0.12500001)
 texture = ExtResource("2_846cq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
