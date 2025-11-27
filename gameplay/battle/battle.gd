@@ -40,5 +40,10 @@ func get_walkable_grid_points() -> Array[Vector2]:
             return a.y < b.y
         return a.x < b.x
     )
-    
+    walkable_points.append(walkable_points[0]-Vector2(0, Global.grid_size))
+    walkable_points.sort_custom(func(a, b):
+        if a.x == b.x:
+            return a.y < b.y
+        return a.x < b.x
+    )
     return walkable_points

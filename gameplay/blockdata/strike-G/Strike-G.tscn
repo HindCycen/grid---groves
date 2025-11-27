@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cim6wgpyaoatf"]
+
+[ext_resource type="Script" uid="uid://b8bqr4d5sbi70" path="res://gameplay/blockplay/block.gd" id="1_xssyk"]
+[ext_resource type="PackedScene" uid="uid://cn4pdtpvgxddn" path="res://gameplay/blockplay/slice.tscn" id="2_54w6t"]
+[ext_resource type="Script" uid="uid://bxgs0hxhp7aj4" path="res://gameplay/blockdata/strike-G/strike.gd" id="2_s15ti"]
+[ext_resource type="Texture2D" uid="uid://dtwvnk1168qwj" path="res://gameplay/assets/picture/green/Sword-G.png" id="3_s15ti"]
+
+[node name="StrikeG" type="Node2D"]
+script = ExtResource("1_xssyk")
+metadata/_custom_type_script = "uid://b8bqr4d5sbi70"
+
+[node name="Strike" parent="." instance=ExtResource("2_54w6t")]
+script = ExtResource("2_s15ti")
+slice_texture = ExtResource("3_s15ti")
+
+[node name="Blank" parent="." instance=ExtResource("2_54w6t")]
+partial_position = Vector2(0, 1)
