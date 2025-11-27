@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://j1w26ltifnb6" path="res://gameplay/battle/bot.gd" id="1_k00uv"]
 [ext_resource type="Script" uid="uid://3d6q3gbm1n2g" path="res://gameplay/battle/battle.gd" id="1_mjyx8"]
 [ext_resource type="Script" uid="uid://bke44wl0ncv7m" path="res://gameplay/battle/button.gd" id="3_pqk30"]
-[ext_resource type="AudioStream" uid="uid://bex72xg7cw1x0" path="res://gameplay/assets/battle.mp3" id="4_ttqn3"]
+[ext_resource type="AudioStream" uid="uid://bex72xg7cw1x0" path="res://gameplay/assets/music/battle.mp3" id="4_ttqn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjyx8"]
 radius = 1.0

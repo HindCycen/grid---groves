@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvgco0p1xktnf"
-path="res://.godot/imported/Sword-R.png-a4451b1efc770046c741b32b9a96a101.ctex"
+uid="uid://c00stxs8o358a"
+path="res://.godot/imported/Right-G.png-e9746d823aecd2d5e2c5c4e0386283bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/assets/Sword-R.png"
-dest_files=["res://.godot/imported/Sword-R.png-a4451b1efc770046c741b32b9a96a101.ctex"]
+source_file="res://gameplay/assets/picture/green/Right-G.png"
+dest_files=["res://.godot/imported/Right-G.png-e9746d823aecd2d5e2c5c4e0386283bd.ctex"]
 
 [params]
 
