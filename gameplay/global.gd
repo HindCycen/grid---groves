@@ -2,14 +2,11 @@ extends Node
 
 @export var global_speed:= 1.0
 
-enum GridState {
-    FREE,
-    UNABLE,
-    OCCUPIED
-}
-@export var grid_size := 16
-var half_grid_size := 8
-@export var px_size := 20
+enum GridState {FREE, UNABLE, OCCUPIED}
+enum SliceType {NULL, ATTACK, SKILL, POWER, SHIT}
+@export var grid_size := 64
+var half_grid_size := 32
+@export var px_size := 80
 var grid_points: Array[Vector2] = []
 var grid_states: Array[int] = []
 var grid_left_up:= Vector2(2, 4) * px_size
@@ -23,6 +20,21 @@ var monster_rand: RandomNumberGenerator
 var reward_rand: RandomNumberGenerator
 var chest_rand: RandomNumberGenerator
 var misc_rand: RandomNumberGenerator
+
+func get_map_rand(scope: int) -> int:
+	return map_rand.randi_range(0, scope - 1)
+
+func get_monster_rand(scope: int) -> int:
+	return monster_rand.randi_range(0, scope - 1)
+
+func get_reward_rand(scope: int) -> int:
+	return reward_rand.randi_range(0, scope - 1)
+
+func get_chest_rand(scope: int) -> int:
+	return chest_rand.randi_range(0, scope - 1)
+
+func get_misc_rand(scope: int) -> int:
+	return misc_rand.randi_range(0, scope - 1)
 
 func init_seed(_seed: int) -> void:
 	if(_seed == 0):
@@ -73,27 +85,25 @@ func init_unlocked_states() -> void:
 		unlocked_cols = saved_cols as Array[bool]
 	else:
 		# 如果没有保存的数据，使用默认值
-		init_unlocked_states()
+		# 初始化默认解锁状态
+		unlocked_rows = [false, true, true, true, false]
+		unlocked_cols = [false, true, true, true, true, true, false]
 
-# 检查行是否解锁
 func is_row_unlocked(row: int) -> bool:
 	if row >= 0 and row < unlocked_rows.size():
 		return unlocked_rows[row]
 	return false
 
-# 检查列是否解锁
 func is_col_unlocked(col: int) -> bool:
 	if col >= 0 and col < unlocked_cols.size():
 		return unlocked_cols[col]
 	return false
 
-# 解锁指定行
 func unlock_row(row: int) -> void:
 	if row >= 0 and row < unlocked_rows.size():
 		unlocked_rows[row] = true
 		update_grid_states()
 
-# 解锁指定列
 func unlock_col(col: int) -> void:
 	if col >= 0 and col < unlocked_cols.size():
 		unlocked_cols[col] = true

@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3sv83bhd4rx8"]
+[gd_scene load_steps=5 format=3 uid="uid://b3sv83bhd4rx8"]
 
 [ext_resource type="Script" uid="uid://bdy61u8kdlh4d" path="res://gameplay/main.gd" id="1_6fabs"]
 [ext_resource type="PackedScene" uid="uid://ss4yi7cgkjvg" path="res://gameplay/battle/battle.tscn" id="2_52ahv"]
-[ext_resource type="PackedScene" uid="uid://bq8f8reg6f7q5" path="res://gameplay/blockdata/strike/strike.tscn" id="3_6fabs"]
+[ext_resource type="PackedScene" uid="uid://cim6wgpyaoatf" path="res://gameplay/blockdata/strike-G/Strike-G.tscn" id="3_6fabs"]
+[ext_resource type="PackedScene" uid="uid://cbm8o285brjhb" path="res://gameplay/blockdata/right-G/right-G.tscn" id="4_w1pve"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6fabs")
 
 [node name="Battle" parent="." instance=ExtResource("2_52ahv")]
 
-[node name="Strike" parent="Battle" instance=ExtResource("3_6fabs")]
+[node name="StrikeG" parent="Battle" instance=ExtResource("3_6fabs")]
+position = Vector2(170, 115)
+
+[node name="RightG" parent="Battle" instance=ExtResource("4_w1pve")]
