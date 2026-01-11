@@ -9,14 +9,16 @@ var game_data: Dictionary = {}
 func _ready() -> void:
     init_default_data()
     
-# 初始化默认数据结构
+# TODO: Add new categories here when  necessary.
 func init_default_data() -> void:
     game_data = {
         "player": {
             "health": 100,
             "max_health": 100,
             "coins": 100,
-            "level": 0
+            "level": 0,
+            "abilities": [],
+            "card_pile": []
         },
         "game_state": {
             "current_seed": 0,
@@ -33,9 +35,9 @@ func init_default_data() -> void:
 
 # 保存数据到文件
 func save(filename: String = "user://savegame.save") -> void:
-    var file = FileAccess.open(filename, FileAccess.WRITE)
+    var file:= FileAccess.open(filename, FileAccess.WRITE)
     if file:
-        var json_string = JSON.stringify(game_data)
+        var json_string := JSON.stringify(game_data)
         file.store_line(json_string)
         file.close()
         print("Game saved successfully to: ", filename)
@@ -48,9 +50,9 @@ func load(filename: String = "user://savegame.save") -> bool:
         print("No save file found at: ", filename)
         return false
     
-    var file = FileAccess.open(filename, FileAccess.READ)
+    var file := FileAccess.open(filename, FileAccess.READ)
     if file:
-        var json_string = file.get_line()
+        var json_string := file.get_line()
         var json = JSON.new()
         var parse_result = json.parse(json_string)
         

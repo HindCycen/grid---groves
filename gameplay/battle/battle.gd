@@ -4,9 +4,10 @@ extends Node2D
 
 
 func _ready() -> void:
-    #print("::main ready")
+    DataSave.load()
+
     Global.init_grid()
-    _draw()
+    _draw() #TODO: Replace it after the map is drawed.
 
     if battle_music:
         battle_music.stream.loop = true
@@ -14,7 +15,6 @@ func _ready() -> void:
 
     for child in get_children():
         if child is Area2D and child.has_method("initialize_bot"):
-            #print("::main child: ", child)
             child.initialize_bot()
 
 func _draw() -> void:
@@ -35,13 +35,13 @@ func get_walkable_grid_points() -> Array[Vector2]:
             walkable_points.append(Global.grid_points[i])
     
     # 按照从左到右、从上到下的顺序排序
-    walkable_points.sort_custom(func(a, b):
+    walkable_points.sort_custom(func(a: Vector2, b: Vector2) -> bool:
         if a.x == b.x:
             return a.y < b.y
         return a.x < b.x
     )
     walkable_points.append(walkable_points[0]-Vector2(0, Global.grid_size))
-    walkable_points.sort_custom(func(a, b):
+    walkable_points.sort_custom(func(a: Vector2, b: Vector2) -> bool:
         if a.x == b.x:
             return a.y < b.y
         return a.x < b.x

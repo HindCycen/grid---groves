@@ -4,16 +4,16 @@ class_name Slice extends Node2D
     It is always a child of the block.
     var partial_position: to show the slice's position in the block
 """
+const UP := 1
+const DOWN := 2
+const LEFT := 4
+const RIGHT := 8
 
+@export var connnecting_ways: int = 15
 @export var partial_position: Vector2
 @export var slice_type: Global.SliceType = Global.SliceType.NULL
-
-# 定义移动方向
-@export var move_direction: Vector2 = Vector2(0, 1)  # 默认向下移动
-
-# 导出纹理变量，用于设置Sprite2D的图像
+@export var move_direction: Vector2 = Vector2(0, 1) 
 @export var slice_texture: Texture2D
-
 @export var base_damage: int = 0
 @export var base_block: int = 0
 @export var base_magic_num: int = 0

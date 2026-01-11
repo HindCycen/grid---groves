@@ -3,6 +3,7 @@ class_name Block extends Node2D
 	Class for show the whole block.
 	var slices: for each slice of the block.
 """
+
 var slices: Array[Node] = []
 var is_pressed: bool = false
 var original_position: Vector2

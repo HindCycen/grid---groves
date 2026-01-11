@@ -1,0 +1,4 @@
+TODO:
+[ ] Delete this file after publish
+[ ] Draw sprites for player and background
+[ ] Add the main game cycle
